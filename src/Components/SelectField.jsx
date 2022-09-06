@@ -2,12 +2,53 @@ import React from 'react';
 import {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const fruits = [
+  {
+    id:1 ,
+    fruit:'Select one'
+  },
+  {
+    id:2,
+    fruit:'Mangoe'
+  },
+  {
+    id:3, 
+    fruit: ' Apple'
+  },
+  {
+    id:4, 
+    fruit:'Melon'
+  },
+  {
+    id:5,
+    fruit: 'Berries'
+  },
+]
+
 
 const SelectField = () => {
-  const [fruitState, setFruitState]= useState("");
+
   return (
     <>
-    <div class="card p-5 m-5 bg-danger">
+    <div className='card p-5 m-5'>
+    <select>
+        {
+          
+          fruits.map(({fruit}, id)=>{
+              return(
+                  <option key={id}>{fruit}</option>
+
+              )
+          })
+        }
+        </select>
+
+      
+        
+        
+      
+    </div>
+    {/* <div class="card p-5 m-5 bg-danger">
         <div class="card-body">
     <div className='container p-5 m-5'>
       <select className='form-select form-select-lg mb-3' value={fruitState} onChange={(e)=>{
@@ -31,7 +72,7 @@ const SelectField = () => {
       </div>
     </div>
     </div>
-    </div>
+    </div> */}
     </>
   )
 }
